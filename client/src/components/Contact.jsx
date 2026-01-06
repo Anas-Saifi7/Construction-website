@@ -8,6 +8,7 @@ export default function Contact() {
     serviceType: "",
     message: "",
   });
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const [status, setStatus] = useState({ type: "", text: "" });
   const [loading, setLoading] = useState(false);
@@ -28,7 +29,7 @@ export default function Contact() {
     try {
       setLoading(true);
     const res = await fetch(
-  `${import.meta.env.VITE_API_URL}/api/enquiry`,
+  `${API_URL}/api/enquiry`,
   {
     method: "POST",
     headers: { "Content-Type": "application/json" },
