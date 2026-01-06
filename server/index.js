@@ -18,10 +18,16 @@ const PORT = process.env.PORT || 5000;
 // ------------------ CORS ------------------
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5174"],
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:5174",
+      "https://construction-website-rouge-five.vercel.app" // 👈 ADD THIS
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   })
 );
+
 
 app.use(express.json());
 
